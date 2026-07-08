@@ -1,0 +1,44 @@
+DAY 3
+LINUX COMMANDS
+
+Users & Permissions
+1. create group
+sudo groupadd GSPractice
+
+2. check if grps are created
+getent groups 
+cat /etc/group
+
+3. add user
+sudo useradd -m -s /bin/bash prachiti
+
+4. check if user is added
+getent passwd
+id user
+
+5. set password for user
+sudo passwd username
+
+6. add user to group
+sudo usermod -aG GSPractice Prachiti
+
+7. check if user is added by 
+groups username
+getent group groupname
+
+Processes & Logs
+1. List processes owned by root
+ps aux | grep "^root"
+
+2. top -n 1 -b | head -20
+
+3. sudo systemctl status servicename
+sudo systemctl status ssh
+sudo systemctl start ssh
+sudo systemctl enable ssh
+sudo systemctl disable ssh
+
+4. journalctl -u ssh
+sudo journalctl -u  ssh --since "1 hour ago"
+
+5. sudo grep "Failed password" /var/log/auth.log | tail -5
